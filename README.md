@@ -1,6 +1,6 @@
-# marked-hard-breaks
+# marked-linenumbers
 
-Force any number blank lines between paragraphs.
+Output a data-lineNumber attribute in the default elements. Requires marked-token-position;
 
 ## Inserting blanks
 
@@ -10,12 +10,23 @@ This extensions expects a `:` at the start of a line. Multiple colons are execut
 <!-- Show most examples of how to use this extension -->
 
 ```js
-const marked = require("marked");
-const markedHardBread = require("marked-justified-paragraphs");
+import { marked as Marked }     from 'marked';
+import {addTokenPositions}      from 'marked-token-position';
+import MarkedLineNumbers        from 'marked-line-numbers';
 
-marked.use(markedJustifiedParagraphsHardBreaks());
+marked.use(MarkedLineNumbers());
 
-const html = marked.parse("Hello\n:::New paragraph");
+const rawBrewtext = `\nI'm a paragraph!\n`;
+
+const tokens = Marked.lexer(rawBrewText, opts);
+addTokenPositions(tokens);
+
+Marked.walkTokens(tokens, opts.walkTokens);
+
+const html = Marked.parser(tokens);
 console.log(html);
-//<p>Hello</p>\n<br><br><br>\n<p>New paragraph</p>\n
 ```
+
+results:
+
+`<p data-lineNumber="1">I'm a paragraph!</p>`
