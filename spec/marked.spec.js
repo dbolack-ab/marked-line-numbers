@@ -1,4 +1,4 @@
 import { runAllMarkedSpecTests } from '@markedjs/testutils';
-import justifiedParagraphs from '../src/index.js';
+import MarkedLineNumbers from '../src/index.js';
 
-runAllMarkedSpecTests({ addExtension: (marked) => { marked.use({ extensions: [justifiedParagraphs] }); }, outputCompletionTables: true });
+runAllMarkedSpecTests({ addExtension: (marked) => { marked.use({ extensions: [MarkedLineNumbers] }); }, outputCompletionTables: true });
