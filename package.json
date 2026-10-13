@@ -1,6 +1,6 @@
 {
   "name": "marked-line-numbers",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Add Line numbers to all tokens in Marked.js",
   "main": "./lib/index.cjs",
   "module": "./src/index.js",
