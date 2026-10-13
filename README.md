@@ -1,10 +1,6 @@
-# marked-linenumbers
+# marked-line-numbers
 
 Output a data-lineNumber attribute in the default elements. Requires marked-token-position;
-
-## Inserting blanks
-
-This extensions expects a `:` at the start of a line. Multiple colons are executed as multiple lines.
 
 # Usage
 <!-- Show most examples of how to use this extension -->
